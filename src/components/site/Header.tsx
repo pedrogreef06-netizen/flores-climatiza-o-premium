@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Snowflake, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoFlores from "@/assets/logo-flores.jpeg";
 
 const links = [
   { href: "#servicos", label: "Serviços" },
@@ -23,23 +24,18 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass border-b border-border/60 py-3" : "bg-transparent py-5"
+        scrolled ? "glass border-b border-border/60 py-2" : "bg-transparent py-3"
       }`}
     >
       <div className="container mx-auto px-5 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 group">
-          <span
-            className={`grid place-items-center h-9 w-9 rounded-xl bg-gradient-primary shadow-glow transition-transform group-hover:scale-105`}
-          >
-            <Snowflake className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
-          </span>
-          <span
-            className={`font-display font-semibold tracking-tight text-lg ${
-              scrolled ? "text-foreground" : "text-white"
+          <img
+            src={logoFlores}
+            alt="Flores Climatização"
+            className={`h-12 md:h-14 w-auto rounded-lg transition-all ${
+              scrolled ? "" : "bg-white/95 p-1 shadow-elegant"
             }`}
-          >
-            Flores <span className="text-gradient">Climatização</span>
-          </span>
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -50,7 +46,7 @@ export function Header() {
               className={`text-sm font-medium transition-colors ${
                 scrolled
                   ? "text-muted-foreground hover:text-foreground"
-                  : "text-white/80 hover:text-white"
+                  : "text-white/90 hover:text-white"
               }`}
             >
               {l.label}
