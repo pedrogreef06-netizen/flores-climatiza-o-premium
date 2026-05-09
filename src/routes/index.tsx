@@ -177,21 +177,6 @@ function Index() {
               </a>
             </div>
 
-            <div
-              className="mt-12 grid grid-cols-3 gap-4 max-w-md animate-fade-up"
-              style={{ animationDelay: "360ms" }}
-            >
-              {[
-                { n: "+500", l: "Serviços realizados" },
-                { n: "8 anos", l: "De experiência" },
-                { n: "5★", l: "Avaliação média" },
-              ].map((s) => (
-                <div key={s.l}>
-                  <div className="text-2xl md:text-3xl font-display font-bold text-white">{s.n}</div>
-                  <div className="text-xs md:text-sm text-white/70 mt-1">{s.l}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
