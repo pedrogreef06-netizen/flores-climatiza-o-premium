@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WHATSAPP_URL =
-  "https://wa.me/5548999999999?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20climatiza%C3%A7%C3%A3o.";
+  "https://api.whatsapp.com/send?phone=5551999175550&text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20climatiza%C3%A7%C3%A3o.";
 
 export function WhatsAppFab() {
   return (
