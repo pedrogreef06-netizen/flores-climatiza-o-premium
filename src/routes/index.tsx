@@ -10,6 +10,7 @@ import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
+import logoFlores from "@/assets/logo-flores.jpeg";
 import { Header } from "@/components/site/Header";
 import { WhatsAppFab, WHATSAPP_URL } from "@/components/site/WhatsAppFab";
 import { useReveal } from "@/hooks/use-reveal";
@@ -176,21 +177,6 @@ function Index() {
               </a>
             </div>
 
-            <div
-              className="mt-12 grid grid-cols-3 gap-4 max-w-md animate-fade-up"
-              style={{ animationDelay: "360ms" }}
-            >
-              {[
-                { n: "+500", l: "Serviços realizados" },
-                { n: "8 anos", l: "De experiência" },
-                { n: "5★", l: "Avaliação média" },
-              ].map((s) => (
-                <div key={s.l}>
-                  <div className="text-2xl md:text-3xl font-display font-bold text-white">{s.n}</div>
-                  <div className="text-xs md:text-sm text-white/70 mt-1">{s.l}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
@@ -442,14 +428,11 @@ function Index() {
       <footer className="bg-[oklch(0.18_0.04_250)] text-white/80">
         <div className="container mx-auto px-5 py-16 grid md:grid-cols-3 gap-10">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="grid place-items-center h-9 w-9 rounded-xl bg-gradient-primary">
-                <Snowflake className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
-              </span>
-              <span className="font-display font-semibold text-lg text-white">
-                Flores Climatização
-              </span>
-            </div>
+            <img
+              src={logoFlores}
+              alt="Flores Climatização"
+              className="h-20 w-auto bg-white rounded-xl p-2 shadow-elegant"
+            />
             <p className="mt-4 text-sm leading-relaxed text-white/60 max-w-xs">
               Especialistas em climatização residencial e comercial em Florianópolis e região.
             </p>
@@ -465,7 +448,7 @@ function Index() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 hover:text-white transition-colors"
                 >
-                  <Phone className="h-4 w-4" /> WhatsApp: (48) 99999-9999
+                  <Phone className="h-4 w-4" /> WhatsApp: (51) 99917-5550
                 </a>
               </li>
               <li>
