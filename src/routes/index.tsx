@@ -2,15 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Wind, Sparkles, Wrench, MapPin, Clock, ShieldCheck, Boxes, Brush, Award,
-  Headset, Star, MessageSquare, CalendarCheck, Phone, Instagram, ChevronDown,
+  Headset, MessageSquare, CalendarCheck, Phone, Instagram, ChevronDown,
   ArrowRight, CheckCircle2, Snowflake,
 } from "lucide-react";
 import heroImg from "@/assets/hero-ac.jpg";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import logoFlores from "@/assets/logo-flores.jpeg";
+import serviceInstalacao from "@/assets/service-instalacao.jpg";
+import serviceHigienizacao from "@/assets/service-higienizacao.jpg";
+import serviceManutencao from "@/assets/service-manutencao.jpg";
+import logoFlores from "@/assets/logo-flores.png";
 import { Header } from "@/components/site/Header";
 import { WhatsAppFab, WHATSAPP_URL } from "@/components/site/WhatsAppFab";
 import { useReveal } from "@/hooks/use-reveal";
