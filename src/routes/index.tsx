@@ -9,7 +9,7 @@ import heroImg from "@/assets/hero-ac.jpg";
 import serviceInstalacao from "@/assets/service-instalacao.jpg";
 import serviceHigienizacao from "@/assets/service-higienizacao.jpg";
 import serviceManutencao from "@/assets/service-manutencao.jpg";
-import logoFlores from "@/assets/logo-flores.png";
+import logoFlores from "@/assets/logo-flores-original.jpeg";
 import { Header } from "@/components/site/Header";
 import { WhatsAppFab, WHATSAPP_URL } from "@/components/site/WhatsAppFab";
 import { useReveal } from "@/hooks/use-reveal";
@@ -376,7 +376,7 @@ function Index() {
             <img
               src={logoFlores}
               alt="Flores Climatização"
-              className="h-14 w-auto brightness-0 invert"
+              className="h-16 w-auto rounded-md bg-white p-1.5"
             />
             <p className="mt-4 text-sm leading-relaxed text-white/60 max-w-xs">
               Especialistas em climatização residencial e comercial em Florianópolis e região.

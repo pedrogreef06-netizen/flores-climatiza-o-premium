@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoFlores from "@/assets/logo-flores.png";
+import logoFlores from "@/assets/logo-flores-original.jpeg";
 
 const links = [
   { href: "#servicos", label: "Serviços" },
@@ -31,10 +31,8 @@ export function Header() {
           <img
             src={logoFlores}
             alt="Flores Climatização"
-            className={`w-auto transition-all duration-500 ${
-              scrolled
-                ? "h-10 md:h-12"
-                : "h-12 md:h-14 brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
+            className={`w-auto rounded-md transition-all duration-500 ${
+              scrolled ? "h-11 md:h-12" : "h-12 md:h-14"
             }`}
           />
         </a>
