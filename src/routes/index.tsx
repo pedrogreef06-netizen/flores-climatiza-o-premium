@@ -82,24 +82,6 @@ const differentials = [
   { icon: Headset, title: "Suporte ao cliente", desc: "Acompanhamento pós-serviço e garantia." },
 ];
 
-const testimonials = [
-  {
-    name: "Camila Andrade",
-    role: "Cliente residencial — Trindade",
-    text: "Equipe extremamente profissional. A instalação ficou impecável, sem sujeira e no horário combinado. Recomendo demais!",
-  },
-  {
-    name: "Rafael Souza",
-    role: "Gerente — Café no Centro",
-    text: "Fizeram a higienização dos splits do nosso café. O ar voltou a refrigerar como novo e o ambiente ficou muito mais agradável.",
-  },
-  {
-    name: "Juliana Martins",
-    role: "Cliente residencial — Jurerê",
-    text: "Atendimento sério, preço justo e muita atenção aos detalhes. Já é o serviço de climatização da nossa família.",
-  },
-];
-
 const steps = [
   { icon: MessageSquare, title: "Contato", desc: "Você fala com a gente pelo WhatsApp e conta sua necessidade." },
   { icon: CalendarCheck, title: "Agendamento", desc: "Marcamos a visita técnica no melhor horário para você." },
@@ -129,8 +111,6 @@ const faqs = [
     a: "Sim, emitimos nota fiscal para todos os serviços, residenciais e empresariais.",
   },
 ];
-
-const gallery = [g1, g2, g3, g4, heroImg, g1];
 
 function Index() {
   useReveal();
