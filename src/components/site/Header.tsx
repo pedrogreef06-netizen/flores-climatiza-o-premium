@@ -27,13 +27,14 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-5 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 group">
+        <a href="#top" className="flex items-center gap-3 group">
           <img
             src={logoFlores}
             alt="Flores Climatização"
-            className={`h-12 md:h-14 w-auto rounded-lg transition-all ${
-              scrolled ? "" : "bg-white/95 p-1 shadow-elegant"
+            className={`w-auto transition-all duration-500 ${
+              scrolled ? "h-10 md:h-11" : "h-12 md:h-14 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]"
             }`}
+            style={{ mixBlendMode: scrolled ? "normal" : "screen" }}
           />
         </a>
 
