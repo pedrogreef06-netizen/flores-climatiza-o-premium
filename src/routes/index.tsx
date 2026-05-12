@@ -376,7 +376,7 @@ function Index() {
             <img
               src={logoFlores}
               alt="Flores Climatização"
-              className="h-20 w-auto bg-white rounded-xl p-2 shadow-elegant"
+              className="h-14 w-auto brightness-0 invert"
             />
             <p className="mt-4 text-sm leading-relaxed text-white/60 max-w-xs">
               Especialistas em climatização residencial e comercial em Florianópolis e região.
