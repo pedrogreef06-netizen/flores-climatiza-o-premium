@@ -2,13 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Wind, Sparkles, Wrench, MapPin, Clock, ShieldCheck, Boxes, Brush, Award,
-  Headset, MessageSquare, CalendarCheck, Phone, Instagram, ChevronDown,
+  Headset, CalendarCheck, Phone, Instagram, ChevronDown,
   ArrowRight, CheckCircle2, Snowflake,
 } from "lucide-react";
 import heroImg from "@/assets/hero-ac.jpg";
-import serviceInstalacao from "@/assets/service-instalacao.jpg";
-import serviceHigienizacao from "@/assets/service-higienizacao.jpg";
-import serviceManutencao from "@/assets/service-manutencao.jpg";
+import serviceInstalacao from "@/assets/service-instalacao.png";
+import serviceHigienizacao from "@/assets/service-higienizacao.png";
+import serviceManutencao from "@/assets/service-manutencao.png";
 import logoFlores from "@/assets/logo-flores-original.jpeg";
 import { Header } from "@/components/site/Header";
 import { WhatsAppFab, WHATSAPP_URL } from "@/components/site/WhatsAppFab";
@@ -80,13 +80,6 @@ const differentials = [
   { icon: Brush, title: "Organização e limpeza", desc: "Cuidamos do seu ambiente do início ao fim." },
   { icon: Award, title: "Padrão técnico", desc: "Procedimentos conforme normas dos fabricantes." },
   { icon: Headset, title: "Suporte ao cliente", desc: "Acompanhamento pós-serviço e garantia." },
-];
-
-const steps = [
-  { icon: MessageSquare, title: "Contato", desc: "Você fala com a gente pelo WhatsApp e conta sua necessidade." },
-  { icon: CalendarCheck, title: "Agendamento", desc: "Marcamos a visita técnica no melhor horário para você." },
-  { icon: Wrench, title: "Execução", desc: "Realizamos o serviço com padrão técnico e máxima organização." },
-  { icon: ShieldCheck, title: "Garantia", desc: "Acompanhamento pós-serviço e suporte sempre que precisar." },
 ];
 
 const faqs = [
@@ -284,42 +277,6 @@ function Index() {
         </div>
       </section>
 
-      {/* PROCESSO */}
-      <section id="processo" className="py-24 md:py-32 bg-gradient-soft">
-        <div className="container mx-auto px-5">
-          <div className="max-w-2xl reveal">
-            <span className="text-sm font-semibold text-primary uppercase tracking-widest">
-              Como funciona
-            </span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-foreground">
-              Simples, rápido e transparente
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Em 4 etapas você tem o conforto térmico que merece.
-            </p>
-          </div>
-
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {steps.map((s, i) => (
-              <div
-                key={s.title}
-                className="reveal relative bg-card rounded-3xl p-7 border border-border shadow-elegant"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <span className="absolute -top-3 -left-2 text-6xl font-display font-bold text-primary/10 leading-none select-none">
-                  0{i + 1}
-                </span>
-                <div className="relative grid place-items-center h-12 w-12 rounded-xl bg-gradient-primary text-primary-foreground">
-                  <s.icon className="h-6 w-6" />
-                </div>
-                <h3 className="relative mt-5 text-lg font-bold text-foreground">{s.title}</h3>
-                <p className="relative mt-2 text-sm text-muted-foreground">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="contato" className="py-20 md:py-28">
         <div className="container mx-auto px-5">
           <div className="reveal relative overflow-hidden rounded-[2rem] bg-gradient-cta p-10 md:p-16 text-center shadow-premium">
@@ -398,12 +355,12 @@ function Index() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/flores.climatizacao/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 hover:text-white transition-colors"
                 >
-                  <Instagram className="h-4 w-4" /> @floresclimatizacao
+                  <Instagram className="h-4 w-4" /> @flores.climatizacao
                 </a>
               </li>
             </ul>
