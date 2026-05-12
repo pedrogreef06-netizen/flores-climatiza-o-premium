@@ -9,7 +9,7 @@ import heroImg from "@/assets/hero-ac.jpg";
 import serviceInstalacao from "@/assets/service-instalacao.jpg";
 import serviceHigienizacao from "@/assets/service-higienizacao.jpg";
 import serviceManutencao from "@/assets/service-manutencao.jpg";
-import logoFlores from "@/assets/logo-flores.png";
+import logoFlores from "@/assets/logo-flores-original.jpeg";
 import { Header } from "@/components/site/Header";
 import { WhatsAppFab, WHATSAPP_URL } from "@/components/site/WhatsAppFab";
 import { useReveal } from "@/hooks/use-reveal";
