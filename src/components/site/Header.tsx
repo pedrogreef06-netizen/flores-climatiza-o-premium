@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoFlores from "@/assets/logo-flores.jpeg";
+import logoFlores from "@/assets/logo-flores.png";
 
 const links = [
   { href: "#servicos", label: "Serviços" },
   { href: "#diferenciais", label: "Diferenciais" },
   { href: "#processo", label: "Como funciona" },
-  { href: "#galeria", label: "Galeria" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -28,12 +27,14 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-5 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 group">
+        <a href="#top" className="flex items-center group">
           <img
             src={logoFlores}
             alt="Flores Climatização"
-            className={`h-12 md:h-14 w-auto rounded-lg transition-all ${
-              scrolled ? "" : "bg-white/95 p-1 shadow-elegant"
+            className={`w-auto transition-all duration-500 ${
+              scrolled
+                ? "h-10 md:h-12"
+                : "h-12 md:h-14 brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
             }`}
           />
         </a>

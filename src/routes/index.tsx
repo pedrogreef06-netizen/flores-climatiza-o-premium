@@ -2,15 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Wind, Sparkles, Wrench, MapPin, Clock, ShieldCheck, Boxes, Brush, Award,
-  Headset, Star, MessageSquare, CalendarCheck, Phone, Instagram, ChevronDown,
+  Headset, MessageSquare, CalendarCheck, Phone, Instagram, ChevronDown,
   ArrowRight, CheckCircle2, Snowflake,
 } from "lucide-react";
 import heroImg from "@/assets/hero-ac.jpg";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import logoFlores from "@/assets/logo-flores.jpeg";
+import serviceInstalacao from "@/assets/service-instalacao.jpg";
+import serviceHigienizacao from "@/assets/service-higienizacao.jpg";
+import serviceManutencao from "@/assets/service-manutencao.jpg";
+import logoFlores from "@/assets/logo-flores.png";
 import { Header } from "@/components/site/Header";
 import { WhatsAppFab, WHATSAPP_URL } from "@/components/site/WhatsAppFab";
 import { useReveal } from "@/hooks/use-reveal";
@@ -41,18 +40,36 @@ export const Route = createFileRoute("/")({
 const services = [
   {
     icon: Wind,
-    title: "Instalação Profissional",
-    desc: "Instalação seguindo rigorosamente as normas dos fabricantes, com materiais de qualidade e acabamento impecável.",
+    title: "Instalação",
+    image: serviceInstalacao,
+    desc: "Instalação completa de splits e multi-splits seguindo rigorosamente o padrão técnico do fabricante. Tubulação, vácuo, isolamento e acabamento impecáveis para garantir desempenho máximo e a validade da garantia do seu equipamento.",
+    bullets: [
+      "Padrão técnico do fabricante",
+      "Materiais de primeira linha",
+      "Acabamento limpo e organizado",
+    ],
   },
   {
     icon: Sparkles,
-    title: "Higienização Completa",
-    desc: "Limpeza profunda do evaporador, condensadora e dutos, eliminando bactérias e melhorando a qualidade do ar.",
+    title: "Higienização",
+    image: serviceHigienizacao,
+    desc: "Limpeza profunda do evaporador, hélice e dreno, eliminando fungos, ácaros e bactérias. Ar mais puro, ambiente saudável e prevenção de odores e problemas respiratórios para toda a família.",
+    bullets: [
+      "Qualidade do ar interior",
+      "Prevenção de mofo e odores",
+      "Recomendado a cada 6 meses",
+    ],
   },
   {
     icon: Wrench,
-    title: "Manutenção Preventiva",
-    desc: "Evite falhas, vazamentos e perda de eficiência com manutenções programadas que aumentam a vida útil do equipamento.",
+    title: "Manutenção",
+    image: serviceManutencao,
+    desc: "Diagnóstico técnico, reparos e checagem completa: gás, pressão, componentes elétricos e desempenho. Restabelecemos a eficiência do seu ar-condicionado e prolongamos sua vida útil.",
+    bullets: [
+      "Diagnóstico preciso",
+      "Reparos com peças de qualidade",
+      "Mais eficiência e economia",
+    ],
   },
 ];
 
@@ -63,24 +80,6 @@ const differentials = [
   { icon: Brush, title: "Organização e limpeza", desc: "Cuidamos do seu ambiente do início ao fim." },
   { icon: Award, title: "Padrão técnico", desc: "Procedimentos conforme normas dos fabricantes." },
   { icon: Headset, title: "Suporte ao cliente", desc: "Acompanhamento pós-serviço e garantia." },
-];
-
-const testimonials = [
-  {
-    name: "Camila Andrade",
-    role: "Cliente residencial — Trindade",
-    text: "Equipe extremamente profissional. A instalação ficou impecável, sem sujeira e no horário combinado. Recomendo demais!",
-  },
-  {
-    name: "Rafael Souza",
-    role: "Gerente — Café no Centro",
-    text: "Fizeram a higienização dos splits do nosso café. O ar voltou a refrigerar como novo e o ambiente ficou muito mais agradável.",
-  },
-  {
-    name: "Juliana Martins",
-    role: "Cliente residencial — Jurerê",
-    text: "Atendimento sério, preço justo e muita atenção aos detalhes. Já é o serviço de climatização da nossa família.",
-  },
 ];
 
 const steps = [
@@ -112,8 +111,6 @@ const faqs = [
     a: "Sim, emitimos nota fiscal para todos os serviços, residenciais e empresariais.",
   },
 ];
-
-const gallery = [g1, g2, g3, g4, heroImg, g1];
 
 function Index() {
   useReveal();
@@ -200,26 +197,52 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-14 grid md:grid-cols-3 gap-6">
+          <div className="mt-14 space-y-8 md:space-y-14">
             {services.map((s, i) => (
               <div
                 key={s.title}
-                className="reveal group relative bg-card rounded-3xl p-8 border border-border shadow-elegant hover:shadow-premium transition-all duration-500 hover:-translate-y-1"
-                style={{ transitionDelay: `${i * 80}ms` }}
+                className={`reveal group grid lg:grid-cols-2 gap-6 lg:gap-12 items-center bg-card rounded-3xl border border-border shadow-elegant overflow-hidden ${
+                  i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+                }`}
               >
-                <div className="grid place-items-center h-14 w-14 rounded-2xl bg-gradient-primary text-primary-foreground shadow-glow group-hover:scale-110 transition-transform">
-                  <s.icon className="h-7 w-7" strokeWidth={2.2} />
+                <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full overflow-hidden">
+                  <img
+                    src={s.image}
+                    alt={`Serviço de ${s.title.toLowerCase()} de ar-condicionado`}
+                    loading="lazy"
+                    width={1280}
+                    height={896}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full glass px-3 py-1.5 text-xs font-semibold text-foreground">
+                    0{i + 1} · {s.title}
+                  </div>
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-foreground">{s.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{s.desc}</p>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-3 transition-all"
-                >
-                  Solicitar este serviço <ArrowRight className="h-4 w-4" />
-                </a>
+                <div className="p-8 md:p-10 lg:p-12">
+                  <div className="grid place-items-center h-12 w-12 rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
+                    <s.icon className="h-6 w-6" strokeWidth={2.2} />
+                  </div>
+                  <h3 className="mt-5 text-2xl md:text-3xl font-bold text-foreground">
+                    {s.title}
+                  </h3>
+                  <p className="mt-4 text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <ul className="mt-6 space-y-2.5">
+                    {s.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                        <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-7 inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-6 py-3 text-sm font-semibold shadow-elegant hover:shadow-glow transition-all"
+                  >
+                    Solicitar orçamento <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -297,84 +320,6 @@ function Index() {
         </div>
       </section>
 
-      {/* DEPOIMENTOS */}
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto px-5">
-          <div className="max-w-2xl mx-auto text-center reveal">
-            <span className="text-sm font-semibold text-primary uppercase tracking-widest">
-              Prova social
-            </span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-foreground">
-              O que nossos clientes dizem
-            </h2>
-          </div>
-
-          <div className="mt-14 grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <div
-                key={t.name}
-                className="reveal bg-card rounded-3xl p-8 border border-border shadow-elegant hover:shadow-premium transition-shadow"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <div className="flex gap-0.5 text-primary">
-                  {Array.from({ length: 5 }).map((_, k) => (
-                    <Star key={k} className="h-5 w-5 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-5 text-foreground/90 leading-relaxed">"{t.text}"</p>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="grid place-items-center h-11 w-11 rounded-full bg-gradient-primary text-primary-foreground font-display font-bold">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">{t.name}</div>
-                    <div className="text-xs text-muted-foreground">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GALERIA */}
-      <section id="galeria" className="py-24 md:py-32 bg-gradient-soft">
-        <div className="container mx-auto px-5">
-          <div className="max-w-2xl reveal">
-            <span className="text-sm font-semibold text-primary uppercase tracking-widest">
-              Nossos trabalhos
-            </span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-foreground">
-              Galeria de serviços
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Instalações, higienizações e manutenções realizadas com excelência.
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
-            {gallery.map((src, i) => (
-              <div
-                key={i}
-                className={`reveal group relative overflow-hidden rounded-2xl shadow-elegant ${
-                  i === 0 ? "md:row-span-2 md:col-span-1 aspect-[3/4] md:aspect-auto" : "aspect-square"
-                }`}
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <img
-                  src={src}
-                  alt={`Trabalho realizado pela Flores Climatização ${i + 1}`}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
       <section id="contato" className="py-20 md:py-28">
         <div className="container mx-auto px-5">
           <div className="reveal relative overflow-hidden rounded-[2rem] bg-gradient-cta p-10 md:p-16 text-center shadow-premium">
@@ -431,7 +376,7 @@ function Index() {
             <img
               src={logoFlores}
               alt="Flores Climatização"
-              className="h-20 w-auto bg-white rounded-xl p-2 shadow-elegant"
+              className="h-14 w-auto brightness-0 invert"
             />
             <p className="mt-4 text-sm leading-relaxed text-white/60 max-w-xs">
               Especialistas em climatização residencial e comercial em Florianópolis e região.
