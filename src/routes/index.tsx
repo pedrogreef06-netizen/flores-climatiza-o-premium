@@ -40,18 +40,36 @@ export const Route = createFileRoute("/")({
 const services = [
   {
     icon: Wind,
-    title: "Instalação Profissional",
-    desc: "Instalação seguindo rigorosamente as normas dos fabricantes, com materiais de qualidade e acabamento impecável.",
+    title: "Instalação",
+    image: serviceInstalacao,
+    desc: "Instalação completa de splits e multi-splits seguindo rigorosamente o padrão técnico do fabricante. Tubulação, vácuo, isolamento e acabamento impecáveis para garantir desempenho máximo e a validade da garantia do seu equipamento.",
+    bullets: [
+      "Padrão técnico do fabricante",
+      "Materiais de primeira linha",
+      "Acabamento limpo e organizado",
+    ],
   },
   {
     icon: Sparkles,
-    title: "Higienização Completa",
-    desc: "Limpeza profunda do evaporador, condensadora e dutos, eliminando bactérias e melhorando a qualidade do ar.",
+    title: "Higienização",
+    image: serviceHigienizacao,
+    desc: "Limpeza profunda do evaporador, hélice e dreno, eliminando fungos, ácaros e bactérias. Ar mais puro, ambiente saudável e prevenção de odores e problemas respiratórios para toda a família.",
+    bullets: [
+      "Qualidade do ar interior",
+      "Prevenção de mofo e odores",
+      "Recomendado a cada 6 meses",
+    ],
   },
   {
     icon: Wrench,
-    title: "Manutenção Preventiva",
-    desc: "Evite falhas, vazamentos e perda de eficiência com manutenções programadas que aumentam a vida útil do equipamento.",
+    title: "Manutenção",
+    image: serviceManutencao,
+    desc: "Diagnóstico técnico, reparos e checagem completa: gás, pressão, componentes elétricos e desempenho. Restabelecemos a eficiência do seu ar-condicionado e prolongamos sua vida útil.",
+    bullets: [
+      "Diagnóstico preciso",
+      "Reparos com peças de qualidade",
+      "Mais eficiência e economia",
+    ],
   },
 ];
 
