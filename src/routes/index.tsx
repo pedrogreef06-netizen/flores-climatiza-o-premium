@@ -197,26 +197,52 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-14 grid md:grid-cols-3 gap-6">
+          <div className="mt-14 space-y-8 md:space-y-14">
             {services.map((s, i) => (
               <div
                 key={s.title}
-                className="reveal group relative bg-card rounded-3xl p-8 border border-border shadow-elegant hover:shadow-premium transition-all duration-500 hover:-translate-y-1"
-                style={{ transitionDelay: `${i * 80}ms` }}
+                className={`reveal group grid lg:grid-cols-2 gap-6 lg:gap-12 items-center bg-card rounded-3xl border border-border shadow-elegant overflow-hidden ${
+                  i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+                }`}
               >
-                <div className="grid place-items-center h-14 w-14 rounded-2xl bg-gradient-primary text-primary-foreground shadow-glow group-hover:scale-110 transition-transform">
-                  <s.icon className="h-7 w-7" strokeWidth={2.2} />
+                <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full overflow-hidden">
+                  <img
+                    src={s.image}
+                    alt={`Serviço de ${s.title.toLowerCase()} de ar-condicionado`}
+                    loading="lazy"
+                    width={1280}
+                    height={896}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full glass px-3 py-1.5 text-xs font-semibold text-foreground">
+                    0{i + 1} · {s.title}
+                  </div>
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-foreground">{s.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{s.desc}</p>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-3 transition-all"
-                >
-                  Solicitar este serviço <ArrowRight className="h-4 w-4" />
-                </a>
+                <div className="p-8 md:p-10 lg:p-12">
+                  <div className="grid place-items-center h-12 w-12 rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
+                    <s.icon className="h-6 w-6" strokeWidth={2.2} />
+                  </div>
+                  <h3 className="mt-5 text-2xl md:text-3xl font-bold text-foreground">
+                    {s.title}
+                  </h3>
+                  <p className="mt-4 text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <ul className="mt-6 space-y-2.5">
+                    {s.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                        <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-7 inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-6 py-3 text-sm font-semibold shadow-elegant hover:shadow-glow transition-all"
+                  >
+                    Solicitar orçamento <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             ))}
           </div>
